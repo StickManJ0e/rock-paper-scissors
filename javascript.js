@@ -2,21 +2,16 @@
 const choiceList = ["rock", "paper", "scissors"];
 let computerSelection;
 function getComputerChoice(choiceList) {
-    let computerChoice = choiceList[Math.floor(Math.random() * choiceList.length)];
-    computerSelection = (computerChoice).toString();
+    computerSelection = (choiceList[Math.floor(Math.random() * choiceList.length)]).toString();
     return computerSelection;
 }
 
-
-//Calls function to gte users input and then converts to lower case
+//Calls function to get users input and then converts to lower case
 let playerSelection;
 function getPlayerChoice() {
-    let choice = prompt("Select 'Rock', 'Paper' or 'Scissors: ");
-    let convertedChoice = choice.toLowerCase();
-    playerSelection = (convertedChoice).toString();
+    playerSelection = ((prompt("Select 'Rock', 'Paper' or 'Scissors: ")).toLowerCase()).toString();
     return playerSelection;
 }
-
 
 //Score System
 let playerScore = 0;
