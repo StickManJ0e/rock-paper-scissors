@@ -17,7 +17,7 @@ function getPlayerChoice() {
     return playerSelection;
 }
 
-    
+
 //Score System
 let playerScore = 0;
 let computerScore = 0;
@@ -27,36 +27,32 @@ let currentScore = (score) => console.log(`You: ${playerScore} | Computer: ${com
 function playRound() {
     console.log(getPlayerChoice());
     console.log(getComputerChoice(choiceList));
-    console.log(playerSelection, computerSelection);
 
-   if (playerSelection === computerSelection) {
-    return ("It's a tie");
-   }
-   else if (playerSelection === "rock" && computerSelection === "paper") {
-    return ("You Lose! Paper beats Rock!");
-   }
-   else if (playerSelection === "paper" && computerSelection === "scissors") {
-    return ("You Lose! scissors beats Paper!");
-   }
-   else if (playerSelection === "scissors" && computerSelection === "rock") {
-    return ("You Lose! Rock beats scissors!");
-   }
-   else if (playerSelection === "rock" && computerSelection === "scissors") {
-    return ("You Win! Rock beats Scissors!");
-   }
-   else {
-    return ("Invalid Input")
-   }
-
+    if (playerSelection === computerSelection) {
+        return ("It's a tie");
+    }
+    else if (playerSelection === "rock" && computerSelection === "paper") {
+        return ("You Lose! Paper beats Rock!");
+    }
+    else if (playerSelection === "paper" && computerSelection === "scissors") {
+        return ("You Lose! scissors beats Paper!");
+    }
+    else if (playerSelection === "scissors" && computerSelection === "rock") {
+        return ("You Lose! Rock beats scissors!");
+    }
+    else {
+        return (`You Win! ${(playerSelection.substr(0, 1)).toUpperCase() + playerSelection.slice(!0)} beats ${(computerSelection.substr(0, 1)).toUpperCase() + computerSelection.slice(!0)}`);
+    }
 }
+
 
 
 function game() {
     for (let i = 0; i < 5; i++) {
-         console.log(`Round ${i+1}: ` + playRound());
-         currentScore();
-     }
- }
+        console.log(`Round ${i + 1}: ` + playRound());
+        currentScore();
+    }
+}
 
 
 game();
