@@ -5,24 +5,13 @@ function getComputerChoice(choiceList) {
     computerSelection = (choiceList[Math.floor(Math.random() * choiceList.length)]).toString();
     return computerSelection;
 }
-
-//Event listeners for each choice
-const choiceButtons = document.querySelectorAll('.choiceButtons button');
-
-//Calls function to get users input and then converts to lower case
+//When a play choice button (rock, paper or scissors) is pressed, it will set the player selection to the id of the button and return it for the round.
 let playerSelection;
-function getPlayerChoice(button) {
-    playerSelection = button.id;
-    alert(playerSelection);
-    // playerSelection = ((prompt("Select 'Rock', 'Paper' or 'Scissors: ")).toLowerCase()).toString();
-    return playerSelection;
-}
-
+const choiceButtons = document.querySelectorAll('.choiceButtons button');
 choiceButtons.forEach((button) => {
     button.addEventListener('click', () => {
         playerSelection = button.id;
-        alert(playerSelection);
-        return playerSelection;
+        return playerSelection
     });
 });
 
