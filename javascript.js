@@ -6,12 +6,23 @@ function getComputerChoice(choiceList) {
     return computerSelection;
 }
 
+//Event listeners for each choice
+const choiceButtons = document.querySelectorAll('.choiceButtons button');
+
 //Calls function to get users input and then converts to lower case
 let playerSelection;
 function getPlayerChoice() {
-    playerSelection = ((prompt("Select 'Rock', 'Paper' or 'Scissors: ")).toLowerCase()).toString();
+    playerSelection = button.id;
+    alert(playerSelection);
+    // playerSelection = ((prompt("Select 'Rock', 'Paper' or 'Scissors: ")).toLowerCase()).toString();
     return playerSelection;
 }
+
+choiceButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        alert(button.id);
+    });
+});
 
 //Score System
 let playerScore = 0;
@@ -50,14 +61,12 @@ function playRound() {
 }
 
 
-
-function game() {
-    for (let i = 0; i < 5; i++) {
-        console.log(`Round ${i + 1}: ` + playRound());
-        currentScore();
-    }
-    console.log(declareWinner(playerScore, computerScore));
-}
-
-game();
+// function game() {
+//     for (let i = 0; i < 5; i++) {
+//         console.log(`Round ${i + 1}: ` + playRound());
+//         currentScore();
+//     }
+//     console.log(declareWinner(playerScore, computerScore));
+// }
+// game();
 
