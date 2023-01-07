@@ -1,3 +1,9 @@
+//Score System
+let playerScore = 0;
+let computerScore = 0;
+let currentScore = (score) => console.log(`You: ${playerScore} | Computer: ${computerScore}`);
+
+
 //Create list of possible choices and calls function to make computer randomly return one
 const choiceList = ["rock", "paper", "scissors"];
 let computerSelection;
@@ -10,15 +16,11 @@ let playerSelection;
 const choiceButtons = document.querySelectorAll('.choiceButtons button');
 choiceButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        playerSelection = button.id;
+        playerSelection = (button.id).toString();
+        console.log(playRound());
         return playerSelection
     });
 });
-
-//Score System
-let playerScore = 0;
-let computerScore = 0;
-let currentScore = (score) => console.log(`You: ${playerScore} | Computer: ${computerScore}`);
 
 //Declare the winner
 function declareWinner(playerScore, computerScore) {
@@ -27,7 +29,7 @@ function declareWinner(playerScore, computerScore) {
 
 //Plays one round where it returns the result of the round
 function playRound() {
-    console.log(getPlayerChoice());
+    console.log(playerSelection);
     console.log(getComputerChoice(choiceList));
 
     if (playerSelection === computerSelection) {
@@ -50,6 +52,7 @@ function playRound() {
         return (`You Win! ${(playerSelection.substr(0, 1)).toUpperCase() + playerSelection.slice(!0)} beats ${(computerSelection.substr(0, 1)).toUpperCase() + computerSelection.slice(!0)}`);
     }
 }
+
 
 
 // function game() {
