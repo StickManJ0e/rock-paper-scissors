@@ -11,7 +11,7 @@ const choiceButtons = document.querySelectorAll('.choiceButtons button');
 
 //Calls function to get users input and then converts to lower case
 let playerSelection;
-function getPlayerChoice() {
+function getPlayerChoice(button) {
     playerSelection = button.id;
     alert(playerSelection);
     // playerSelection = ((prompt("Select 'Rock', 'Paper' or 'Scissors: ")).toLowerCase()).toString();
@@ -20,7 +20,9 @@ function getPlayerChoice() {
 
 choiceButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        alert(button.id);
+        playerSelection = button.id;
+        alert(playerSelection);
+        return playerSelection;
     });
 });
 
